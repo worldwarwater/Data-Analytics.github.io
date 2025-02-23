@@ -1,0 +1,22 @@
+title: "Stephen Drani's Project Blog"
+author: "Stephen Drani"
+description: "A collection of my data projects, insights, and findings."
+baseurl: "" # Leave empty if this is your personal site repo
+theme: minima # Default Jekyll theme, can be changed
+
+# Navigation links
+navbar:
+  - name: "Home"
+    url: "/"
+  - name: "Projects"
+    url: "/projects"
+  - name: "About"
+    url: "/about"
+
+# Permalinks for blog posts
+permalink: /:year/:month/:day/:title/
+
+# Plugins (GitHub Pages supports a limited set)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
