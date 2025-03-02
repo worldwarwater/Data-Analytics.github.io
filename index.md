@@ -26,3 +26,15 @@ View the dataset and insights directly below.
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml?widget=true&amp;headers=false" width="100%" height="600"></iframe>
 
 👉 [Open in Fullscreen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml)
+
+## 🏋️ Python BMI Calculator  
+
+The **BMI Calculator** is a simple Python script that allows users to input their **weight (in pounds)** and **height (in feet & inches)** to determine their **Body Mass Index (BMI)**.  
+
+### 🔹 Features:  
+- Accepts height in **feet and inches** (e.g., `6.1` for 6 feet 1 inch).  
+- Calculates BMI using the standard **BMI formula**.  
+- Classifies the result into categories: **Underweight, Normal, Overweight, Obese, etc.**  
+- Includes error handling for invalid inputs.  
+
+👉 **Check out the full code here:** [BMI Calculator]()  
