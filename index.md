@@ -38,3 +38,18 @@ The **BMI Calculator** is a simple Python script that allows users to input thei
 - Includes error handling for invalid inputs.  
 
 👉 **Check out the full code here:** [BMI Calculator](https://github.com/worldwarwater/Data-Analytics.github.io/blob/main/Untitled5.ipynb)  
+
+# Fiction Books Web Scraper 📖  
+
+## Overview  
+This project is a web scraper that extracts fiction book information (title, price, and availability) from an online bookstore. The data is then saved into a CSV file for further analysis.  
+
+## Features  
+- Scrapes all fiction books across multiple pages  
+- Extracts book **title, price, and availability**  
+- Saves data in a structured CSV format  
+- Uses `BeautifulSoup` and `requests` for web scraping  
+## 🚀 Open in Google Colab
+Click the button below to open and run the notebook in Google Colab:
+
+[![Open in Colab](g)](https://drive.google.com/file/d/1Sl46hOQmbtfxDD6rJiPvE_k5WG-T4an-/view?usp=share_link)
