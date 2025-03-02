@@ -23,6 +23,6 @@ This project analyzes electricity consumption across various Indian cities from 
 <h2>📊 Excel Analysis: Indian Cities' Electricity Consumption</h2>
 <p>This sheet contains the full dataset and analysis for electricity consumption across Indian cities.</p>
 
-<iframe width="100%" height="600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml"></iframe>
+<iframe width="100%" height="600"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml?widget=true&amp;headers=false"></iframe>">
 
 <p>👉 <a href="https://docs.google.com/spreadsheets/d/YOUR-SHEET-ID/pubhtml" target="_blank">Open in Fullscreen</a></p>
