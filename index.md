@@ -19,10 +19,10 @@ This project analyzes electricity consumption across various Indian cities from 
 - **Trends** showed a **decrease in overall electricity consumption** over the years.
 - **Energy-saving opportunities** were explored for high-consumption areas.
 
-👉 **[View Full Project & Download Dataset](excel-project/)**  
-<h2>📊 Excel Analysis: Indian Cities' Electricity Consumption</h2>
-<p>This sheet contains the full dataset and analysis for electricity consumption across Indian cities.</p>
+## 📊 Excel Analysis: Indian Cities' Electricity Consumption
 
-<iframe width="100%" height="600"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml?widget=true&amp;headers=false"></iframe>">
+View the dataset and insights directly below.
 
-<p>👉 <a href="https://docs.google.com/spreadsheets/d/YOUR-SHEET-ID/pubhtml" target="_blank">Open in Fullscreen</a></p>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml?widget=true&amp;headers=false" width="100%" height="600"></iframe>
+
+👉 [Open in Fullscreen](https://docs.google.com/spreadsheets/d/e/2PACX-1vSrgolBQqo9SFGhED8c_ZxG4WyuI-2_wbOM5X_o8Tbg9YGSAl3cSXWD3n1nx48Mpg/pubhtml)
