@@ -37,4 +37,4 @@ The **BMI Calculator** is a simple Python script that allows users to input thei
 - Classifies the result into categories: **Underweight, Normal, Overweight, Obese, etc.**  
 - Includes error handling for invalid inputs.  
 
-👉 **Check out the full code here:** [BMI Calculator]()  
+👉 **Check out the full code here:** [BMI Calculator](https://github.com/worldwarwater/Data-Analytics.github.io/blob/main/Untitled5.ipynb)  
