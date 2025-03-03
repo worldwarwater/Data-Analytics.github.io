@@ -53,3 +53,15 @@ This project is a web scraper that extracts fiction book information (title, pri
 Click the button below to open and run the notebook in Google Colab:
 
 [![Open in Colab](g)](https://drive.google.com/file/d/1Sl46hOQmbtfxDD6rJiPvE_k5WG-T4an-/view?usp=share_link)
+
+# Book Scraper 📚  
+
+## Overview  
+This project is a web scraper that extracts book information (title, price, and availability) from an online bookstore. It collects data from **all categories** and saves it into a CSV file for analysis.  
+
+## Features  
+- Scrapes books from **all available pages**  
+- Extracts book **title, price, and availability**  
+- Saves data into a structured CSV file  
+- Uses `BeautifulSoup` and `requests` for web scraping  
+[![Open in Colab](g)](https://drive.google.com/file/d/1wyn3mz1wz0zpUOUjdDsfFV9kF8LjEh_P/view?usp=share_link)
