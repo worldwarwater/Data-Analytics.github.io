@@ -65,3 +65,15 @@ This project is a web scraper that extracts book information (title, price, and 
 - Saves data into a structured CSV file  
 - Uses `BeautifulSoup` and `requests` for web scraping  
 [![Open in Colab](g)](https://drive.google.com/file/d/1wyn3mz1wz0zpUOUjdDsfFV9kF8LjEh_P/view?usp=share_link)
+
+📊 Seattle Airbnb Listings Analysis
+
+📌 Overview
+
+This project analyzes Seattle’s Airbnb listings using Tableau to uncover key trends in pricing, availability, and neighborhood popularity.
+
+🔍 Key Insights
+	•	Pricing Trends: Identified average prices across different neighborhoods.
+	•	Availability Analysis: Examined seasonal trends and booking patterns.
+	•	Top Locations: Highlighted high-demand areas based on reviews and occupancy rates.
+(https://public.tableau.com/views/SeattleAirbnbListings_17380158298660/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
