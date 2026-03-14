@@ -13,8 +13,10 @@ conflict_prefer("filter", "dplyr")
 conflict_prefer("lag", "dplyr")
 ```
 ```{r}
-q1_2019 <- read_csv("~/Documents/Data Analytics Portfolio/Divvy_Trips_2019_Q1 - Divvy_Trips_2019_Q1.csv")
-q1_2020 <- read_csv("~/Documents/Data Analytics Portfolio/Divvy_Trips_2020_Q1.csv")
+# Download data from: https://divvy-tripdata.s3.amazonaws.com/index.html
+# Place CSV files in the same directory as this .Rmd file, or update paths below
+q1_2019 <- read_csv("Divvy_Trips_2019_Q1.csv")
+q1_2020 <- read_csv("Divvy_Trips_2020_Q1.csv")
 ```
 #Data wrangling 
 ```{r}
