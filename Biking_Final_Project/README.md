@@ -15,10 +15,55 @@ Understanding these differences helps the marketing team design strategies to co
 - Q1 2020 data shows early impacts of COVID-19 on overall ridership
 
 ## Analysis Steps
-1. **Data Wrangling** — Combined Q1 2019 and Q1 2020 datasets, standardized column names, and converted data types
-2. **Data Cleaning** — Removed invalid records (negative ride lengths, HQ test stations), standardized user type labels
-3. **Descriptive Analysis** — Calculated mean, median, max, and min ride lengths by user type and day of week
-4. **Visualization** — Created bar charts comparing ride frequency and average duration by user type across weekdays
+
+### 1. Data Wrangling
+- Combined Q1 2019 and Q1 2020 datasets using `bind_rows()`
+- Standardized column names across datasets (e.g., `trip_id` → `ride_id`, `usertype` → `member_casual`)
+- Converted data types (`ride_id` and `rideable_type` to character, timestamps to datetime)
+- Dropped unnecessary columns (`start_lat`, `start_lng`, `birthyear`, `gender`, `tripduration`)
+
+### 2. Data Cleaning
+- Reclassified user labels: "Subscriber" → "member", "Customer" → "casual"
+- Added derived date fields: month, day, year, day_of_week
+- Calculated `ride_length` from start/end timestamps
+- Removed invalid records (negative ride lengths, HQ QR test station entries)
+
+### 3. Descriptive Analysis
+- Computed summary statistics (mean, median, max, min) for ride length
+- Compared ride duration by user type and day of week
+- Ordered weekdays chronologically for meaningful trend comparison
+
+### 4. Visualizations
+
+**Chart 1: Number of Rides by Day of Week (Casual vs. Member)**
+A grouped bar chart comparing total ride count by weekday for each user type. Shows that members ride consistently throughout the week while casual riders peak on weekends.
+
+![Number of Rides by Weekday](images/rides_by_weekday.png)
+
+```r
+all_trips_v2 %>%
+  mutate(weekday = wday(started_at, label = TRUE)) %>%
+  group_by(member_casual, weekday) %>%
+  summarise(number_of_rides = n(), .groups = "drop") %>%
+  ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +
+  geom_col(position = "dodge")
+```
+
+**Chart 2: Average Ride Duration by Day of Week (Casual vs. Member)**
+A grouped bar chart comparing average ride length (seconds) by weekday. Demonstrates that casual riders consistently take longer trips than members across all days.
+
+![Average Ride Duration by Weekday](images/avg_duration_by_weekday.png)
+
+```r
+all_trips_v2 %>%
+  mutate(weekday = wday(started_at, label = TRUE)) %>%
+  group_by(member_casual, weekday) %>%
+  summarise(average_duration = mean(ride_length), .groups = "drop") %>%
+  ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
+  geom_col(position = "dodge")
+```
+
+> **Note:** To generate the chart images, knit the R Markdown file or run the code chunks in RStudio. The charts will render inline.
 
 ## Tools & Technologies
 - R (tidyverse, lubridate, ggplot2, conflicted)
