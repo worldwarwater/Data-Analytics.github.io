@@ -1,0 +1,31 @@
+skill,category,job_count,avg_salary,avg_applicants
+SQL,Programming,615,122135.0,105.0
+R,Programming,609,121516.0,103.0
+Scala,Programming,587,118724.0,105.0
+Java,Programming,582,119679.0,105.0
+Python,Programming,568,120915.0,102.0
+Power BI,Visualization,492,103051.0,107.0
+Google Sheets,Visualization,478,106054.0,106.0
+Looker,Visualization,453,102163.0,107.0
+Excel,Visualization,451,102987.0,108.0
+MongoDB,Databases,440,126993.0,102.0
+Tableau,Visualization,439,99492.0,106.0
+BigQuery,Databases,417,122705.0,106.0
+MySQL,Databases,416,125731.0,103.0
+PostgreSQL,Databases,394,125206.0,103.0
+AWS,Cloud,377,131955.0,105.0
+Databricks,Cloud,373,135067.0,102.0
+Redshift,Databases,371,118803.0,103.0
+GCP,Cloud,357,129709.0,101.0
+Snowflake,Cloud,353,136708.0,103.0
+Kafka,Data Engineering,350,134686.0,103.0
+Airflow,Data Engineering,345,134861.0,102.0
+Docker,Data Engineering,344,132924.0,106.0
+Azure,Cloud,337,132365.0,104.0
+Git,Data Engineering,331,131943.0,104.0
+dbt,Data Engineering,324,134404.0,104.0
+Spark MLlib,ML/AI,256,143477.0,100.0
+TensorFlow,ML/AI,251,146438.0,103.0
+PyTorch,ML/AI,247,138680.0,102.0
+Scikit-learn,ML/AI,242,142099.0,102.0
+XGBoost,ML/AI,239,139854.0,103.0
