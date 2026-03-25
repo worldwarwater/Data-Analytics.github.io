@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Word/Office temp & lock files
+~$*
+.~lock.*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# SQLite journal files
+*.db-journal
+
+# Duplicate files
+*copy*
