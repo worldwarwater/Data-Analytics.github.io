@@ -1,0 +1,10 @@
+Test Name,Comparison,Statistic,P-Value,Effect Size,Significant,Conclusion
+Chi-Square: RFM Segment vs Response,RFM Segment vs Campaign Response,Chi2=135.6665,0.000000,Cramers V=0.2480,Yes,Different RFM segments show different response rates
+Chi-Square: Education vs Acceptance,Education vs Campaign Acceptance,Chi2=6.2317,0.182500,Cramers V=0.0532,No,Education independent of acceptance
+ANOVA: Income Across RFM Segments,RFM segment income differences,F=84.4847,0.000000,Tukey computed,Yes,Income varies by RFM segment
+ANOVA: MntTotal Across RFM Segments,RFM segment spending differences,F=105.9063,0.000000,Tukey computed,Yes,Spending varies by RFM segment
+T-Test: Responders vs Non-Responders Spending,Responders vs Non-Responders,t=12.8937,0.000000,Cohen's d=0.7668,Yes,Responders spend significantly more
+Mann-Whitney U: Responders vs Non-Responders,Responders vs Non-Responders (non-parametric),U=427116.5000,0.000000,r=-0.3703,Yes,Spending differs between groups
+Pearson: Income vs MntTotal,Income-Spending correlation,r=0.8231,0.000000,R2=0.6774,Yes,Income significantly predicts spending
+Spearman: Income vs MntTotal,Income-Spending correlation (non-parametric),rho=0.8696,0.000000,rho2=0.7562,Yes,Monotonic relationship between income and spending
+Kruskal-Wallis: Total_Purchases by Cluster,Cluster median differences (non-parametric),H=1613.6766,0.000000,Epsilon2=0.7318,Yes,Purchase counts differ across clusters
