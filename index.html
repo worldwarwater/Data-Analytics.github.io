@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stephen Drani | Data Analytics Portfolio</title>
+<meta name="description" content="Data analytics portfolio: customer segmentation, churn prediction, job market analysis, Excel, R and web scraping projects with interactive charts.">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  (function () {
+    var t = localStorage.getItem('theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Stephen Drani</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow">Data Analytics Portfolio</p>
+    <h1>I turn messy data into decisions people can act on.</h1>
+    <p class="lede">Python, SQL, R and Excel projects covering customer segmentation, churn prediction, labour market analysis and web scraping. Every chart below is drawn live from the project datasets, so hover, switch views and explore.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="#projects">See the projects</a>
+      <a class="btn" href="https://github.com/worldwarwater/Data-Analytics.github.io">View on GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/stephen-drani-a58140232">LinkedIn</a>
+    </div>
+    <div class="stats" id="hero-stats"></div>
+  </section>
+
+  <section id="projects" class="wrap">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <div class="chips" id="filters" role="group" aria-label="Filter projects by tool">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="python">Python</button>
+        <button class="chip" data-filter="sql">SQL</button>
+        <button class="chip" data-filter="ml">Machine learning</button>
+        <button class="chip" data-filter="stats">Statistics</button>
+        <button class="chip" data-filter="dashboard">Dashboards</button>
+        <button class="chip" data-filter="r">R</button>
+        <button class="chip" data-filter="excel">Excel</button>
+      </div>
+    </div>
+
+    <!-- Marketing -->
+    <article class="project" data-tags="python sql ml stats dashboard">
+      <div class="project-text">
+        <h3>Marketing Campaign Segmentation &amp; ROI</h3>
+        <p class="tools">Python · SQL · Scikit-learn · SciPy · Looker Studio</p>
+        <p>Segmented 2,205 retail customers (2,240 before cleaning) with RFM scoring and K-Means clustering, compared campaign response across segments and channels, and checked the differences with 10 statistical tests.</p>
+        <ul class="findings">
+          <li><strong>Hibernating customers are 68% of the base and 61% of spend.</strong> Loyal customers are 10% of the base but 21% of spend.</li>
+          <li>Champions respond to campaigns at <strong>48%</strong>, versus 11% for Hibernating customers.</li>
+          <li>Income explains about <strong>68% of the variance</strong> in total spend (Pearson r = 0.82).</li>
+        </ul>
+        <p class="note">Channel ROI in the notebooks uses assumed contact costs ($5 web, $15 catalog, $3 store), since the dataset has no cost data.</p>
+        <div class="links">
+          <a href="marketing-campaign-analysis/">Project write-up</a>
+          <a href="https://github.com/worldwarwater/Data-Analytics.github.io/tree/main/marketing-campaign-analysis/notebooks">Notebooks</a>
+          <a href="https://lookerstudio.google.com/s/sN0LOkumv0o">Live dashboard ↗</a>
+        </div>
+      </div>
+      <div class="viz">
+        <div class="viz-head">
+          <div class="seg" role="tablist" data-chart="mkt">
+            <button class="active" data-view="spend">Avg spend</button>
+            <button data-view="resp">Response rate</button>
+            <button data-view="share">Share of spend</button>
+            <button data-view="n">Customers</button>
+            <button data-view="scatter">Income vs spend</button>
+          </div>
+        </div>
+        <div class="canvas-box"><canvas id="mkt-chart" aria-label="Marketing segment chart" role="img"></canvas></div>
+        <details class="table-toggle">
+          <summary>Statistical test results</summary>
+          <div class="table-scroll"><table id="mkt-tests"></table></div>
+        </details>
+      </div>
+    </article>
+
+    <!-- Churn -->
+    <article class="project" data-tags="python ml dashboard">
+      <div class="project-text">
+        <h3>Customer Churn Analysis &amp; Prediction</h3>
+        <p class="tools">Python · Pandas · Scikit-learn · Looker Studio</p>
+        <p>Explored churn across 7,043 telecom customers and trained a logistic regression model (ROC-AUC about 0.74) that scores each customer's risk of leaving.</p>
+        <ul class="findings">
+          <li><strong>Contract type is the strongest driver:</strong> month-to-month customers churn at 42%, against 17% on one-year and 9% on two-year contracts.</li>
+          <li>Customers in their first two years churn at roughly <strong>36–37%</strong>, versus about 21–23% after that.</li>
+          <li>Churned customers pay more per month ($69 vs $64), and fiber customers churn most of the internet types.</li>
+        </ul>
+        <div class="calc">
+          <label for="mtm-slider">What if we moved <output id="mtm-pct">10</output>% of month-to-month customers onto annual contracts?</label>
+          <input type="range" id="mtm-slider" min="0" max="50" step="1" value="10">
+          <p class="calc-out"><span id="mtm-cust">0</span> fewer churned customers, about <strong id="mtm-rev">$0</strong> a month in retained revenue.</p>
+          <p class="note">Assumes converted customers take on the one-year churn rate (17.2%) and keep the month-to-month average bill ($65.69).</p>
+        </div>
+        <div class="links">
+          <a href="customer-churn-analysis/">Project write-up</a>
+          <a href="https://github.com/worldwarwater/Data-Analytics.github.io/blob/main/customer-churn-analysis/churn_analysis.ipynb">Notebook</a>
+          <a href="https://lookerstudio.google.com/s/ra8vaWVRUzQ">Live dashboard ↗</a>
+        </div>
+      </div>
+      <div class="viz">
+        <div class="viz-head">
+          <label class="select-label">Churn rate by
+            <select id="churn-dim">
+              <option value="Contract">Contract type</option>
+              <option value="Tenure">Tenure</option>
+              <option value="InternetService">Internet service</option>
+              <option value="PaymentMethod">Payment method</option>
+              <option value="Services">Number of add-on services</option>
+            </select>
+          </label>
+        </div>
+        <div class="canvas-box"><canvas id="churn-chart" aria-label="Churn rate chart" role="img"></canvas></div>
+        <p class="note">Dashed line: overall churn rate.</p>
+      </div>
+    </article>
+
+    <!-- Job market -->
+    <article class="project" data-tags="python sql stats dashboard">
+      <div class="project-text">
+        <h3>Job Market Analysis Pipeline</h3>
+        <p class="tools">Python · SQL · SQLite · SciPy · Looker Studio</p>
+        <p>An end-to-end pipeline: generated 2,500 data-role job postings, loaded them into a normalized SQLite database, answered 10 business questions in SQL and tested the results with t-tests, ANOVA and chi-square.</p>
+        <ul class="findings">
+          <li>ML tools (TensorFlow, Spark MLlib, Scikit-learn) carry a <strong>$20–25K</strong> salary premium over core skills like SQL and Python.</li>
+          <li>Remote roles pay about <strong>$4,400 more</strong> than on-site roles but draw <strong>59% more applicants</strong>.</li>
+          <li>Average pay more than doubles from entry level ($80K) to lead ($171K).</li>
+        </ul>
+        <p class="note">The postings are a synthetic dataset built with <code>generate_dataset.py</code>. The project demonstrates the pipeline and SQL, not real market figures.</p>
+        <div class="links">
+          <a href="job-market-analysis/">Project write-up</a>
+          <a href="https://github.com/worldwarwater/Data-Analytics.github.io/blob/main/job-market-analysis/sql/analysis_queries.sql">SQL queries</a>
+          <a href="https://lookerstudio.google.com/s/g3VbO0T8B4c">Live dashboard ↗</a>
+        </div>
+      </div>
+      <div class="viz">
+        <div class="viz-head">
+          <div class="seg" role="tablist" data-chart="jobs">
+            <button class="active" data-view="paying">Top-paying skills</button>
+            <button data-view="demand">Most in-demand</button>
+            <button data-view="experience">By experience</button>
+            <button data-view="title">By job title</button>
+            <button data-view="worktype">Remote vs on-site</button>
+          </div>
+        </div>
+        <div class="canvas-box"><canvas id="jobs-chart" aria-label="Job market chart" role="img"></canvas></div>
+      </div>
+    </article>
+
+    <!-- Book scraper -->
+    <article class="project" data-tags="python">
+      <div class="project-text">
+        <h3>Fiction Book Web Scraper</h3>
+        <p class="tools">Python · Requests · BeautifulSoup · Pandas</p>
+        <p>A scraper that walks the paginated fiction category of a practice bookstore site, pulls title, price, stock status and star rating, converts ratings to numbers and exports an analysis-ready CSV, with a polite one-second delay between requests.</p>
+        <ul class="findings">
+          <li>The sample export holds <strong><span data-bind="books.n"></span> titles</strong> with an average price of <strong>£<span data-bind="books.avg"></span></strong>.</li>
+        </ul>
+        <div class="links">
+          <a href="book_scraper/">Project write-up</a>
+          <a href="https://github.com/worldwarwater/Data-Analytics.github.io/blob/main/book_scraper/book_scraper.py">Code</a>
+          <a href="book_scraper/fiction_books.csv">Data (CSV)</a>
+        </div>
+      </div>
+      <div class="viz">
+        <div class="viz-head"><p class="viz-title">Books by price band</p></div>
+        <div class="canvas-box short"><canvas id="books-chart" aria-label="Book price distribution" role="img"></canvas></div>
+      </div>
+    </article>
+
+    <!-- Excel + R, compact cards -->
+    <div class="mini-grid">
+      <article class="project mini" data-tags="excel">
+        <h3>Electricity Consumption Analysis</h3>
+        <p class="tools">Excel · Pivot Tables · VLOOKUP · Conditional formatting</p>
+        <p>Cleaned and analyzed city-level electricity consumption in India (2016–2019) by purpose: domestic, commercial, industrial and public works. Built pivot tables to rank the highest-consuming cities and track the trend over time.</p>
+        <div class="links">
+          <a href="Excel-Project/">Project write-up</a>
+          <a href="Excel-Project/Excel%20Analysis.xlsm">Download workbook</a>
+        </div>
+      </article>
+      <article class="project mini" data-tags="r stats">
+        <h3>Divvy Bike-Share: Casual vs Member Riders</h3>
+        <p class="tools">R · tidyverse · ggplot2</p>
+        <p>Google Data Analytics capstone. Compared Q1 2019 and Q1 2020 Chicago bike-share trips: members ride more often on weekdays, while casual riders take longer trips that peak on weekends. The question is how to convert casual riders into members.</p>
+        <div class="links">
+          <a href="Biking_Final_Project/">Project write-up</a>
+          <a href="https://github.com/worldwarwater/Data-Analytics.github.io/blob/main/Biking_Final_Project/Biking%20Final%20Project.Rmd">R Markdown</a>
+        </div>
+      </article>
+    </div>
+    <p class="empty" id="empty-msg" hidden>No projects match that filter.</p>
+  </section>
+
+  <section id="skills" class="wrap">
+    <h2>Skills &amp; tools</h2>
+    <div class="skill-grid">
+      <div><h4>Languages</h4><p>Python, SQL, R</p></div>
+      <div><h4>Analysis</h4><p>Pandas, NumPy, SciPy, Scikit-learn, hypothesis testing, RFM &amp; clustering</p></div>
+      <div><h4>Visualization</h4><p>Matplotlib, Seaborn, ggplot2, Tableau, Looker Studio, Excel</p></div>
+      <div><h4>Data</h4><p>SQLite, Microsoft SQL Server, web scraping, data cleaning</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="wrap about">
+    <h2>About me</h2>
+    <p>I'm a data analyst based in Edmonton, Alberta, currently completing a Bachelor of Finance at NAIT. I'm Google certified in Data Analytics and Business Intelligence.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="https://linkedin.com/in/stephen-drani-a58140232">Connect on LinkedIn</a>
+      <a class="btn" href="https://github.com/worldwarwater">GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <p>Charts are rendered from the project datasets in this repository. Built with plain HTML, CSS and Chart.js.</p>
+</footer>
+
+<script src="assets/vendor/chart.umd.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

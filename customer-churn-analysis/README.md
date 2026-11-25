@@ -14,15 +14,15 @@ This project walks through the full data analyst pipeline: data cleaning, explor
 
 ## Key Findings
 
-**1. Month-to-month contracts are the #1 churn driver** — these customers churn at 42%, compared to 17% for annual and 9% for two-year contracts. Converting even 10% of month-to-month customers to annual contracts could save ~$14K/month in revenue.
+**1. Month-to-month contracts are the #1 churn driver.** These customers churn at 42%, compared to 17% for one-year and 9% for two-year contracts. Moving 10% of month-to-month customers onto annual contracts would keep about 100 more customers, worth roughly $6.5K/month in revenue (assuming they take on the one-year churn rate and keep the month-to-month average bill of $65.69).
 
-**2. The first 12 months are make-or-break** — new customers churn at the highest rate. After surviving year one, churn drops dramatically. This points to a need for a strong onboarding experience.
+**2. The first two years carry the most risk.** Customers with 0–24 months of tenure churn at 36–37%, versus 21–23% after that. This points to a need for a strong onboarding and early-retention program.
 
-**3. Fiber optic customers churn more than DSL** — despite being the premium service. This suggests a pricing/value mismatch, not a quality problem.
+**3. Fiber optic customers churn more than DSL** (33% vs 27%), despite fiber being the premium service. This suggests a pricing/value mismatch rather than a quality problem.
 
-**4. Electronic check payers churn most** — customers on auto-pay (bank transfer or credit card) are significantly stickier. Reducing friction in payments reduces churn.
+**4. Churned customers pay more.** Their average monthly bill is $69.14, versus $64.42 for customers who stayed.
 
-**5. Bundled services reduce churn** — customers subscribed to 4+ services churn at lower rates, suggesting cross-sell and bundle strategies would improve retention.
+**5. Payment method and number of add-on services matter little.** Churn varies only between 27.5% and 31.9% across payment methods, and customers with more add-on services do not churn less. Contract and tenure are where retention effort should go.
 
 ## Visualizations
 
@@ -30,12 +30,12 @@ This project walks through the full data analyst pipeline: data cleaning, explor
 |-------|---------|
 | ![Churn Distribution](charts/01_churn_distribution.png) | 29.4% of customers churned |
 | ![Churn by Contract](charts/02_churn_by_contract.png) | Month-to-month = 42% churn |
-| ![Churn by Tenure](charts/03_churn_by_tenure.png) | New customers churn most |
+| ![Churn by Tenure](charts/03_churn_by_tenure.png) | First two years churn most |
 | ![Monthly Charges](charts/04_monthly_charges_dist.png) | Churned customers pay more |
 | ![Internet Service](charts/05_churn_by_internet.png) | Fiber optic churn is highest |
-| ![Payment Method](charts/06_churn_by_payment.png) | E-check = highest churn |
+| ![Payment Method](charts/06_churn_by_payment.png) | Payment method has little effect |
 | ![Correlation Matrix](charts/07_correlation_heatmap.png) | Feature relationships |
-| ![Services vs Churn](charts/08_services_vs_churn.png) | More services = less churn |
+| ![Services vs Churn](charts/08_services_vs_churn.png) | More services does not mean less churn |
 
 ## Prediction Model
 
@@ -61,9 +61,8 @@ The interactive dashboard includes KPI cards (total customers, churn rate, reven
 customer-churn-analysis/
 ├── churn_analysis.py          # Full analysis pipeline
 ├── telco_churn_raw.csv        # Raw dataset (7,043 rows)
-├── churn_dashboard_data.csv   # Cleaned + enriched for Looker Studio
+├── churn_analysis.ipynb       # Notebook version of the analysis
 ├── requirements.txt           # Python dependencies
-├── LOOKER_SETUP.md            # Dashboard build instructions
 ├── README.md                  # This file
 └── charts/                    # All generated visualizations
     ├── 01_churn_distribution.png
