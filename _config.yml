@@ -1,0 +1,9 @@
+title: "Stephen Drani | Data Analytics Portfolio"
+description: "Data analytics projects in Python, SQL, R and Excel, with interactive charts."
+author: "Stephen Drani"
+theme: jekyll-theme-primer
+plugins:
+  - jekyll-seo-tag
+  - jekyll-readme-index
+exclude:
+  - scripts/

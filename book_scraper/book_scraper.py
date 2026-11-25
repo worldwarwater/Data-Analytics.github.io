@@ -29,6 +29,7 @@ def get_page(url):
     """Fetch a page and return BeautifulSoup object."""
     response = requests.get(url, headers=HEADERS)
     response.raise_for_status()
+    response.encoding = "utf-8"  # site omits charset; without this "£" decodes as "Â£"
     return BeautifulSoup(response.text, "html.parser")
 
 
